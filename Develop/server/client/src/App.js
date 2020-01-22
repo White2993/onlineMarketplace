@@ -1,13 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Search from './components/Search'; 
+import Cart from './components/Cart'; 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path={"/"} component={Search} />
+        <Route path={"/cart"} component={Cart} />
+        <Route path={"/search"} component={Search}/>
+      </Switch>
+    </Router>
   );
 }
 
