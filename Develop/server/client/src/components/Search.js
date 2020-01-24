@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import API from '../utils/API';
+import Dropdown from 'react-dropdown'
+import Navigation from './Navigation'
 
 export default function Search() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -30,9 +32,9 @@ export default function Search() {
 
   return (
     <section>
+    <Navigation />
     <form>
       <input id="searchBar" name="searchBar" type="search" onChange={(e) => setSearchTerm(e.target.value)} />
-      <label htmlFor="searchBar">Search</label>
       <button type="submit" onClick={(e) => productSearch(e)}>Search</button>
     </form>
     <div className="results">
@@ -42,6 +44,7 @@ export default function Search() {
               <th>Name</th>
               <th>Price</th>
               <th>Image</th>
+              <th>Qty</th>
               <th>&nbsp;</th>
             </tr>
           </tbody>
