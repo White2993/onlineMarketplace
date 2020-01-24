@@ -5,7 +5,7 @@ function getProducts() {
 }
 
 function createProduct(data) {
-  return axios.post("/api/products", data)
+  return axios.post("http://localhost:3001/api/products", data)
 }
 
 function deleteProduct(id) {
